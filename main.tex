@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage[european]{circuitikz}
+\newcommand{\numpy}{{\tt numpy}}    % tt font for numpy
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+
+\begin{document}
+
+% ========== Edit your name here
+\author{Kevin Laemers}
+\title{Natuurkunde: Schakelingen - vwo 3}
+\maketitle
+
+\medskip
+
+% ========== Begin answering questions here
+
+
+
+\section{Weerstanden}
+\subsection{Formules}
+\begin{equation}
+    U=I\cdot R
+\end{equation}
+\begin{equation}
+    R = \frac{\rho \cdot l}{A}
+\end{equation}
+\subsection{Grootheden en eenheden}
+Vul de tabel aan.
+
+\begin{center}
+\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Grootheden en eenheden} \\
+ \hline
+ Grootheid & Symbool & Eenheid & Symbool \\
+ \hline
+ Spanning   &  ...  & ...  & ...  \\
+ Stroomsterkte & ...  & ...  & ...\\
+ Weerstand & ... & ... & ... \\
+ \hline
+\end{tabular}
+\end{center}
+% ========== Just examples, please delete before submitting
+\subsection{Een simpel circuit}
+Geef met een pijl aan hoe de stroom loopt en gebruik meteen het juiste symbool om aan te geven over welke grootheid het gaat. 
+\begin{center}
+\begin{circuitikz}[european]
+\draw (0,0) to[battery1, l=$U$] (0,2) -- (3,2)
+to[R=$R_1$] (3,0) -- (0,0);
+\end{circuitikz}
+\end{center}
+\subsection{Een kleine berekening}
+$U$ is een batterij van $9V$ en $R_1$ is een weerstand van 1,2k$\Omega$. Bereken de totale stroom die door de schakeling loopt zoals te zien is bij de vorige opdracht.
+
+\subsection{Rekenen met soortelijke weerstand}
+Bij ProRail worden koperen kabels gebruikt om treinen te voorzien van elektrische energie. Deze kabels zijn opgehangen waardoor treinen de elektrische energie kunnen benutten door middel van een uitklapbaar mechanisme. Deze kabels worden ook wel de bovenleiding genoemd en hebben een diameter van 11,2 $mm$ en de spanning die erover staat is 25$kV$. 
+\begin{enumerate}
+ \item Bereken de totale weerstand van de bovenleiding over een afstand van 2$km$.
+ \item Leg uit waarom er geen ijzeren kabels gebruikt worden voor de bovenleidingen.
+\end{enumerate}
+\subsection{Bijzondere componenten}
+Streep door wat niet van toepassing is op de volgende drie stellingen:
+\begin{enumerate}
+    \item Als de temperatuur van een NTC stijgt, dan daalt/stijgt de weerstand.
+    \item Als de temperatuur van een PTC stijgt, dan daalt/stijgt de weerstand.
+    \item Als er meer licht op een LDR valt, dan daalt/stijgt de weerstand.
+\end{enumerate}
+\section{Weerstanden in schakelingen}
+\subsection{Weerstanden in serie}
+De cirkel is een spanningsbron en kan je zien als een normale batterij. 
+\begin{enumerate}
+\item Teken dit circuit opnieuw met één vervangingsweerstand en bepaal deze waarde.
+\item Bepaal op punt A de stroom
+\item Bereken de spanning over elke weerstand.
+\end{enumerate}
+
+\begin{center}
+\begin{circuitikz}[european]
+\draw (0,0) to[V=9V] (0,2)
+to[R=$20\Omega$,-*] (3,2) 
+node[label={[font=\footnotesize]above:$A$}] {}
+to[R=$120\Omega$] (6,2) 
+to[R=$60\Omega$] (9,2) -- (9,0)
+(9,0) -- (0,0);
+\end{circuitikz}
+\end{center}
+
+\subsection{Weerstanden in parallel}
+De cirkel is een spanningsbron en kan je zien als een normale batterij. 
+\begin{enumerate}
+\item Teken dit circuit opnieuw met één vervangingsweerstand en bepaal deze waarde.
+\item Bepaal op punt A de spanning.
+\item Bepaal de stroom door elk van de 3 weerstanden (moeilijk)
+\end{enumerate}
+
+\begin{center}
+\begin{circuitikz}[european]
+\draw 
+ (0,0) to[V=9V] 
+ (0,3) -- (2,3)
+ to[R=$20\Omega$] 
+ (2,0) -- (0,0)
+ (2,3) -- (4,3) 
+ node[label={[font=\footnotesize]above:$A$}] {}
+ to[R=$120\Omega$,*-] 
+ (4,0) -- (2,0)
+ (4,3) -- (6,3) 
+ to[R=$60\Omega$] 
+ (6,0) -- (4,0)
+
+;
+\end{circuitikz}
+\end{center}
+\subsection{Gemengde schakelingen}
+\begin{enumerate}
+\item Teken dit circuit opnieuw met één vervangingsweerstand en bepaal deze waarde.
+\item Bepaal de totale stroom die door de schakeling loopt.
+\item Bepaal de spanning over de weerstand van $20\Omega$ (moeilijk)
+\item Bepaal de stroom door de weerstand van $160\Omega$ (moeilijk)
+\end{enumerate}
+
+\begin{center}
+\begin{circuitikz}[european]
+\draw 
+ (0,0) to[V=9V] 
+ (0,3) -- (2,3)
+ to[R=$20\Omega$] 
+ (2,1.5)--(2,1.5)
+ to[R=$160\Omega$] 
+ (2,0) -- (0,0)
+ (2,3) -- (4,3) 
+ to[R=$120\Omega$] 
+ (4,0) -- (2,0)
+;
+\end{circuitikz}
+\end{center}
+
+\subsection{Metingen uitvoeren}
+Om het gedrag van schakelingen in het echte leven te controleren na berekeningen en simulaties kunnen we gebruik maken van spanningsmeters en stroommeters. Hierbij is het van belang dat deze goed aangesloten worden op de schakeling. Nu volgen er twee situaties. Teken dus voor beide deze situaties een schakeling met daarin de juiste meetinstrumenten die op de juiste manier zijn aangesloten.
+
+
+
+\begin{enumerate}
+\item We willen weten wat de totale stroom is die uit de spanningsbron komt. 
+\item We willen weten hoeveel spanning er over lamp 2 staat. 
+
+\end{enumerate}
+\begin{center}
+\begin{circuitikz}[european]
+\draw 
+ (0,0) to[V=9V] 
+ (0,3) -- (2,3)
+ to[lamp, l=1] 
+ (2,1.5)--(2,1.5)
+ to[lamp, l=2] 
+ (2,0) -- (0,0)
+ (2,3) -- (4,3) 
+ to[lamp, l=3] 
+ (4,0) -- (2,0)
+;
+\end{circuitikz}
+\end{center}
+\end{document}
+\grid
+\grid
