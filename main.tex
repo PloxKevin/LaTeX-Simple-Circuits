@@ -50,7 +50,7 @@ Vul de tabel aan.
 Geef met een pijl aan hoe de stroom loopt en gebruik meteen het juiste symbool om aan te geven over welke grootheid het gaat. 
 \begin{center}
 \begin{circuitikz}[european]
-\draw (0,0) to[battery1, l=$U$] (0,2) -- (3,2)
+\draw (0,0) to[battery2, invert, l=$U$] (0,2) -- (3,2)
 to[R=$R_1$] (3,0) -- (0,0);
 \end{circuitikz}
 \end{center}
@@ -81,7 +81,7 @@ De cirkel is een spanningsbron en kan je zien als een normale batterij.
 
 \begin{center}
 \begin{circuitikz}[european]
-\draw (0,0) to[V=9V] (0,2)
+\draw (0,0) to[battery2, invert,l=9V]  (0,2)
 to[R=$20\Omega$,-*] (3,2) 
 node[label={[font=\footnotesize]above:$A$}] {}
 to[R=$120\Omega$] (6,2) 
@@ -101,7 +101,7 @@ De cirkel is een spanningsbron en kan je zien als een normale batterij.
 \begin{center}
 \begin{circuitikz}[european]
 \draw 
- (0,0) to[V=9V] 
+ (0,0) to[battery2, invert,l=9V]
  (0,3) -- (2,3)
  to[R=$20\Omega$] 
  (2,0) -- (0,0)
@@ -127,7 +127,7 @@ De cirkel is een spanningsbron en kan je zien als een normale batterij.
 \begin{center}
 \begin{circuitikz}[european]
 \draw 
- (0,0) to[V=9V] 
+ (0,0) to[battery2, invert,l=9V]
  (0,3) -- (2,3)
  to[R=$20\Omega$] 
  (2,1.5)--(2,1.5)
@@ -153,7 +153,7 @@ Om het gedrag van schakelingen in het echte leven te controleren na berekeningen
 \begin{center}
 \begin{circuitikz}[european]
 \draw 
- (0,0) to[V=9V] 
+ (0,0) to[battery2, invert,l=9V]
  (0,3) -- (2,3)
  to[lamp, l=1] 
  (2,1.5)--(2,1.5)
